@@ -6,7 +6,7 @@ public class MathCalculator {
     public static void main(String[] args) {
         System.out.println("Результат расчета №1 равен: " + sumAndMultiply(10, 20));
         System.out.println("Результат расчета №2 равен: " + diffAndDivision(10, 20));
-        System.out.println("Результат расчета №2 равен: " + sumAndMultAndDiffAndDivision(10, 20));
+        System.out.println("Результат расчета №3 равен: " + sumAndMultAndDiffAndDivision(10, 20));
     }
 
     public static double sumAndMultiply(double first, double second) {
