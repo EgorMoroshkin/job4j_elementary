@@ -25,4 +25,13 @@ public class CounterTest {
         int outCounter = Counter.sum(start, finish);
         assertThat(outCounter).isEqualTo(expected);
     }
+
+    @Test
+    public void sumHonestFrom0To10() {
+        int start = 0;
+        int finish = 10;
+        int expected = 30;
+        int outCounter = Counter.sumByEven(start, finish);
+        assertThat(outCounter).isEqualTo(expected);
+    }
 }
