@@ -92,9 +92,5 @@
                 <version>3.0.0-M7</version>
             </plugin>
         </plugins>
-        <pluginManagement>
-            <plugins>
-            </plugins>
-        </pluginManagement>
     </build>
 </project>
