@@ -9,19 +9,19 @@ import static org.junit.Assert.*;
 public class CounterTest {
 
     @Test
-    public void sumFrom1To10() {
+    public void sumFrom1To11() {
         int start = 1;
-        int finish = 10;
-        int expected = 55;
+        int finish = 11;
+        int expected = 66;
         int outCounter = Counter.sum(start, finish);
         assertThat(outCounter).isEqualTo(expected);
     }
 
     @Test
-    public void sumFrom10To20() {
-        int start = 10;
-        int finish = 20;
-        int expected = 165;
+    public void sumFrom11To21() {
+        int start = 11;
+        int finish = 21;
+        int expected = 176;
         int outCounter = Counter.sum(start, finish);
         assertThat(outCounter).isEqualTo(expected);
     }
