@@ -13,8 +13,8 @@ public class CounterTest {
         int start = 1;
         int finish = 11;
         int expected = 66;
-        int outCounter = Counter.sum(start, finish);
-        assertThat(outCounter).isEqualTo(expected);
+        int result = Counter.sum(start, finish);
+        assertThat(result).isEqualTo(expected);
     }
 
     @Test
@@ -22,16 +22,25 @@ public class CounterTest {
         int start = 11;
         int finish = 21;
         int expected = 176;
-        int outCounter = Counter.sum(start, finish);
-        assertThat(outCounter).isEqualTo(expected);
+        int result = Counter.sum(start, finish);
+        assertThat(result).isEqualTo(expected);
     }
 
     @Test
-    public void sumHonestFrom0To10() {
-        int start = 0;
+    public void whenSumEvenNumbersFromFiveToTwentyThenThirty() {
+        int start = 5;
+        int finish = 20;
+        int expected = 104;
+        int result = Counter.sumByEven(start, finish);
+        assertThat(result).isEqualTo(expected);
+    }
+
+    @Test
+    public void whenSumEvenNumbersFromOneToTenThenThirty() {
+        int start = 1;
         int finish = 10;
+        int result = Counter.sumByEven(start, finish);
         int expected = 30;
-        int outCounter = Counter.sumByEven(start, finish);
-        assertThat(outCounter).isEqualTo(expected);
+        assertThat(result).isEqualTo(expected);
     }
 }
