@@ -40,7 +40,24 @@ public class PointTest {
         Point a = new Point(6, 2);
         Point b = new Point(8, 7);
         double out = a.distance(b);
+        Assert.assertEquals(expected, out, 0.01);
+    }
 
+    @Test
+    public void when629to878then5Dot47() {
+        double expected = 5.47;
+        Point a = new Point(6, 2, 9);
+        Point b = new Point(8, 7, 8);
+        double out = a.distance3d(b);
+        Assert.assertEquals(expected, out, 0.01);
+    }
+
+    @Test
+    public void when111to222then1Dot73() {
+        double expected = 1.73;
+        Point a = new Point(1, 1, 1);
+        Point b = new Point(2, 2, 2);
+        double out = a.distance3d(b);
         Assert.assertEquals(expected, out, 0.01);
     }
 }
