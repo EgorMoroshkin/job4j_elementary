@@ -3,17 +3,19 @@ package ru.job4j.calculator;
 public class Fit {
     public static void main(String[] args) {
         short height = 187;
-        double man = Fit.manWeight(height);
-        double woman = Fit.womanWeight(height);
-        System.out.println("Man 187 is " + man);
-        System.out.println("Woman 187 is " + woman);
+        System.out.printf("Man 187 is %.2f%n", idealWeight(height, Gender.MALE));
+        System.out.printf("Woman 187 is %.2f%n", idealWeight(height, Gender.FEMALE));
     }
 
-    public static double manWeight(short height) {
-        return (height - 100) * 1.15;
+    public enum Gender {
+        MALE, FEMALE
     }
 
-    public static double womanWeight(short height) {
-        return (height - 110) * 1.15;
+    public static double idealWeight(short height, Gender gender) {
+        if (height < 100) {
+            throw new IllegalArgumentException("Height must be >= 100 cm");
+        }
+        int base = gender == Gender.MALE ? 100 : 110;
+        return (height - base) * 1.15;
     }
 }

@@ -8,18 +8,17 @@ import static org.junit.Assert.*;
 public class FitTest {
 
     @Test
-    public void whenMan180Then92() {
-        short in = 180;
-        double expected = 92;
-        double out = Fit.manWeight(in);
-        Assert.assertEquals(expected, out, 0.01);
+    public void whenWomanHeight187ThenWeightIs8855() {
+        double expected = 88.55;
+        double actual = Fit.idealWeight((short) 187, Fit.Gender.FEMALE);
+        assertEquals(expected, actual, 0.01);
     }
 
     @Test
-    public void whenWoman170Then69() {
-        short in = 170;
-        double expected = 69;
-        double out = Fit.womanWeight(in);
-        Assert.assertEquals(expected, out, 0.01);
+    public void whenHeightTooLowThenException() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () ->
+                Fit.idealWeight((short) 90, Fit.Gender.MALE)
+        );
+        assertEquals("Height must be >= 100 cm", exception.getMessage());
     }
 }
